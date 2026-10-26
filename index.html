@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>راوية Rawiya — رفيقك في الشعر العربي</title>
+<meta name="description" content="راوية: اقرأ الشعر العربي الفصيح واحفظه بيتاً بيتاً، مع مراجعة متباعدة وكشف البحر والقافية. لأندرويد والآيفون والمتصفح، بلا حساب ولا إعلانات.">
+<meta name="theme-color" content="#0F1216" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3ECDD" media="(prefers-color-scheme: light)">
+<meta property="og:title" content="راوية — رفيقك في الشعر العربي">
+<meta property="og:description" content="اقرأ الشعر العربي واحفظه بيتاً بيتاً.">
+<meta property="og:image" content="https://moumen-akkad.github.io/icon-512.png">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  @font-face { font-family: Amiri; src: url(fonts/Amiri-Regular.ttf); font-display: swap; }
+  @font-face { font-family: ArefRuqaa; font-weight: 700; src: url(fonts/ArefRuqaa-Bold.ttf); font-display: swap; }
+  @font-face { font-family: Plex; font-weight: 400; src: url(fonts/IBMPlexSansArabic-Regular.ttf); font-display: swap; }
+  @font-face { font-family: Plex; font-weight: 600; src: url(fonts/IBMPlexSansArabic-SemiBold.ttf); font-display: swap; }
+
+  /* The app's two looks: night majlis and paper manuscript. */
+  :root {
+    --ground: #F3ECDD; --surface: #FBF7EE; --raised: #EFE6D3; --hairline: #E2D7C0;
+    --ink: #1F1A14; --ink2: #5E5447; --ink3: #6E6455;
+    --gold: #B08A3A; --gold-text: #7A5A14; --gold-muted: #C9AE72; --on-gold: #FBF7EE;
+    --accent: #F7EBCD; --accent-line: #E2CC94; --rubric: #9C3B2A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0F1216; --surface: #171C22; --raised: #1E252D; --hairline: #2A333D;
+      --ink: #F2EBDD; --ink2: #B9B0A1; --ink3: #9A927F;
+      --gold: #D4AF5A; --gold-text: #E8C877; --gold-muted: #6B5A30; --on-gold: #1A1406;
+      --accent: #1A1812; --accent-line: #3A3220; --rubric: #D4AF5A;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font-family: Plex, system-ui, sans-serif;
+         font-size: 17px; line-height: 1.7; }
+  a { color: var(--gold-text); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  .star { color: var(--gold); }
+
+  /* Hero */
+  header.wrap { padding-block: 56px 24px; text-align: center; }
+  .app-icon { width: 104px; height: 104px; border-radius: 24px; border: 1px solid var(--hairline);
+              box-shadow: 0 16px 40px rgba(15, 18, 22, .35); }
+  h1 { font-family: ArefRuqaa, serif; font-weight: 700; font-size: clamp(56px, 12vw, 84px); line-height: 1.2;
+       margin: 18px 0 0; }
+  .tagline { font-size: clamp(18px, 4.4vw, 22px); color: var(--ink2); margin: 4px 0 0; }
+  .verse { margin: 36px auto 0; max-width: 680px; padding: 26px 20px; border-radius: 24px;
+           background: var(--accent); border: 1px solid var(--accent-line); }
+  .verse p { font-family: Amiri, serif; font-size: clamp(22px, 5.6vw, 30px); line-height: 2; margin: 0; }
+  .verse .poet { font-size: 14px; color: var(--ink3); margin-top: 6px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 30px; }
+  .button { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 10px 22px;
+            border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 16px; }
+  .button.primary { background: var(--gold); color: var(--on-gold); }
+  .button.secondary { background: var(--surface); color: var(--ink); border: 1px solid var(--hairline); }
+
+  /* Ornament divider */
+  .divider { display: flex; align-items: center; gap: 14px; margin: 56px 0 28px; color: var(--gold); }
+  .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--hairline); }
+  h2 { font-family: ArefRuqaa, serif; font-weight: 700; font-size: 36px; line-height: 1.3; margin: 0; text-align: center; }
+  .section-lead { text-align: center; color: var(--ink2); margin: 6px auto 0; max-width: 620px; }
+
+  /* Screenshots */
+  /* Centred when they fit; scrollable from the first one when they don't. */
+  .shots { display: flex; gap: 18px; margin-top: 28px; overflow-x: auto; padding: 4px 4px 12px;
+           scroll-snap-type: x mandatory; }
+  .shots > :first-child { margin-inline-start: auto; }
+  .shots > :last-child { margin-inline-end: auto; }
+  .shots img { width: 230px; flex: none; border-radius: 30px; border: 1px solid var(--hairline);
+               box-shadow: 0 14px 34px rgba(15, 18, 22, .25); scroll-snap-align: center; }
+
+  /* Features */
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 28px; }
+  .card { background: var(--surface); border: 1px solid var(--hairline); border-radius: 22px; padding: 22px; }
+  .card h3 { margin: 0 0 4px; font-size: 18px; font-weight: 600; }
+  .card p { margin: 0; color: var(--ink2); font-size: 15.5px; }
+  .card .soon { display: inline-block; font-size: 12px; font-weight: 600; color: var(--gold-text);
+                border: 1px solid var(--accent-line); background: var(--accent); border-radius: 999px;
+                padding: 0 10px; margin-inline-start: 6px; vertical-align: 2px; }
+
+  /* Downloads */
+  .downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin-top: 28px; }
+  .download h3 { font-size: 22px; }
+  .download .actions { display: flex; flex-direction: column; gap: 10px; margin: 16px 0 12px; }
+  .download .button { justify-content: center; }
+  .note { font-size: 14px; color: var(--ink3); margin: 0; }
+  .source { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
+  .source code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; direction: ltr; text-align: left;
+                 font-size: 13px; background: var(--raised); border-radius: 10px; padding: 8px 10px; }
+  .source button { font: inherit; font-size: 14px; border: 1px solid var(--hairline); background: var(--surface);
+                   color: var(--ink); border-radius: 10px; padding: 6px 12px; cursor: pointer; }
+  .meta { font-size: 13px; color: var(--ink3); margin-top: 10px; }
+
+  footer.wrap { margin-top: 64px; padding-block: 28px 40px; border-top: 1px solid var(--hairline); text-align: center;
+                color: var(--ink3); font-size: 14px; }
+  footer p { margin: 4px 0; }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <img class="app-icon" src="icon-512.png" alt="">
+  <h1>راوية</h1>
+  <p class="tagline">اقرأ الشعر العربي، واحفظه بيتاً بيتاً.</p>
+  <div class="verse">
+    <p>قِفا نَبكِ مِن ذِكرى حَبيبٍ وَمَنزِلِ</p>
+    <p>بِسِقطِ اللِوى بَينَ الدَخولِ فَحَومَلِ</p>
+    <div class="poet">امرؤ القيس · من المعلقة</div>
+  </div>
+  <div class="cta">
+    <a class="button primary" href="#download">نزّل التطبيق</a>
+    <a class="button secondary" href="app/">جرّبه في المتصفح</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="shots" aria-label="صور من التطبيق">
+    <img src="screenshots/home.png" alt="شاشة اليوم: بيت اليوم ومراجعة اليوم" loading="lazy">
+    <img src="screenshots/poem.png" alt="شاشة القصيدة بمظهر الورق، مع البحر والقافية" loading="lazy">
+    <img src="screenshots/review.png" alt="المراجعة: يظهر الصدر ويُخفى العجز" loading="lazy">
+  </div>
+
+  <div class="divider" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="15,1 29,15 15,29 1,15"/><rect x="5.1" y="5.1" width="19.8" height="19.8"/></svg></div>
+  <h2>ما يقدّمه لك</h2>
+  <div class="features">
+    <div class="card"><h3>مراجعة في وقتها</h3><p>يعيد إليك كل بيت حفظته حين يوشك أن يُنسى، فتكفيك دقائق كل يوم ليبقى محفوظاً.</p></div>
+    <div class="card"><h3>استحضر قبل أن ترى</h3><p>يعرض الصدر ويخفي العجز لتستحضره من ذاكرتك، ثم تقيّم حفظك بنفسك.</p></div>
+    <div class="card"><h3>البحر والقافية</h3><p>يتعرّف على بحر القصيدة ورويّها، ويقطّع البيت تفعيلةً تفعيلة.</p></div>
+    <div class="card"><h3>بالتشكيل أو بدونه</h3><p>أظهر الحركات أو أخفِها لتمتحن نفسك، وكبّر الخط كما يريحك، بمظهر الليل أو الورق.</p></div>
+    <div class="card"><h3>مكتبتك لك</h3><p>بلا حساب ولا إعلانات ولا تتبّع. تبقى قصائدك على جهازك، وتنقلها بنسخة احتياطية.</p></div>
+    <div class="card"><h3>الاستماع والتسميع <span class="soon">قريباً</span></h3><p>كرّر الإلقاء بيتاً بيتاً، وسمّع بصوتك ليُبيّن لك ما أخطأت فيه.</p></div>
+  </div>
+
+  <div class="divider" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="15,1 29,15 15,29 1,15"/><rect x="5.1" y="5.1" width="19.8" height="19.8"/></svg></div>
+  <h2 id="download">نزّل راوية</h2>
+  <p class="section-lead">مجاناً، على أي جهاز. الإصدار ٠.١.٠، ٢٦ أكتوبر ٢٠٢٦.</p>
+  <div class="downloads">
+    <div class="card download">
+      <h3>أندرويد</h3>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/moumen-akkad/moumen-akkad.github.io/releases/latest/download/Rawiya.apk">تنزيل التطبيق (٥٤ م.ب)</a>
+      </div>
+      <p class="note">افتح الملف بعد تنزيله، واسمح للمتصفح بتثبيت التطبيقات إن سألك أندرويد. الإصدارات الجديدة تُثبَّت فوق القديمة وتبقى قصائدك.</p>
+    </div>
+    <div class="card download">
+      <h3>آيفون وآيباد</h3>
+      <div class="actions">
+        <a class="button primary" href="altstore://source?url=https://moumen-akkad.github.io/altstore.json">أضِفه إلى AltStore</a>
+        <a class="button secondary" href="sidestore://source?url=https://moumen-akkad.github.io/altstore.json">أضِفه إلى SideStore</a>
+      </div>
+      <p class="note">عبر <a href="https://altstore.io">AltStore</a> أو <a href="https://sidestore.io">SideStore</a>، وتأتيك التحديثات منهما. بحساب Apple مجاني يجدّد AltStore التطبيق كل أسبوع.</p>
+      <div class="source"><code id="source-url">https://moumen-akkad.github.io/altstore.json</code><button type="button" id="copy-source">نسخ</button></div>
+      <p class="meta">أو <a href="https://github.com/moumen-akkad/moumen-akkad.github.io/releases/download/v0.1.0/Rawiya.ipa">نزّل ملف IPA</a> (٨ م.ب) وثبّته بنفسك.</p>
+    </div>
+    <div class="card download">
+      <h3>في المتصفح</h3>
+      <div class="actions">
+        <a class="button primary" href="app/">افتح راوية</a>
+      </div>
+      <p class="note">يعمل دون تثبيت. لتجعله كالتطبيق على الآيفون: زر المشاركة ثم «إضافة إلى الشاشة الرئيسية». تُحفظ مكتبتك في هذا المتصفح.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p><span class="star">✦</span> صُنع حبّاً بالشعر العربي <span class="star">✦</span></p>
+  <p>لا يجمع راوية أي بيانات عنك.</p>
+</footer>
+
+<script>
+  document.getElementById('copy-source').addEventListener('click', async (event) => {
+    try {
+      await navigator.clipboard.writeText(document.getElementById('source-url').textContent);
+      event.target.textContent = 'نُسخ ✓';
+    } catch (_) {
+      getSelection().selectAllChildren(document.getElementById('source-url'));
+    }
+  });
+</script>
+</body>
+</html>

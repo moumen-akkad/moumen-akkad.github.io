@@ -1,0 +1,51 @@
+{
+  "name": "راوية",
+  "identifier": "io.github.moumen-akkad",
+  "subtitle": "رفيقك في الشعر العربي",
+  "description": "اقرأ الشعر العربي الفصيح، واحفظه بيتاً بيتاً.\n\n• مراجعة متباعدة تعيد إليك كل بيت حفظته حين يوشك أن يُنسى.\n• يعرض الصدر ويخفي العجز لتستحضره، ثم تقيّم حفظك.\n• يتعرّف على بحر القصيدة ورويّها، ويقطّع البيت تفعيلةً تفعيلة.\n• التشكيل ظاهراً أو مخفياً، بمظهر الليل أو الورق.\n• بلا حساب ولا إعلانات ولا تتبّع، ونسخة احتياطية تنقل مكتبتك.",
+  "iconURL": "https://moumen-akkad.github.io/icon-512.png",
+  "website": "https://moumen-akkad.github.io",
+  "tintColor": "#D4AF5A",
+  "nsfw": false,
+  "featuredApps": [
+    "com.akkad.diwan"
+  ],
+  "apps": [
+    {
+      "name": "راوية",
+      "bundleIdentifier": "com.akkad.diwan",
+      "developerName": "Moumen Akkad",
+      "subtitle": "رفيقك في الشعر العربي",
+      "localizedDescription": "اقرأ الشعر العربي الفصيح، واحفظه بيتاً بيتاً.\n\n• مراجعة متباعدة تعيد إليك كل بيت حفظته حين يوشك أن يُنسى.\n• يعرض الصدر ويخفي العجز لتستحضره، ثم تقيّم حفظك.\n• يتعرّف على بحر القصيدة ورويّها، ويقطّع البيت تفعيلةً تفعيلة.\n• التشكيل ظاهراً أو مخفياً، بمظهر الليل أو الورق.\n• بلا حساب ولا إعلانات ولا تتبّع، ونسخة احتياطية تنقل مكتبتك.",
+      "iconURL": "https://moumen-akkad.github.io/icon-512.png",
+      "tintColor": "#D4AF5A",
+      "category": "education",
+      "screenshots": [
+        "https://moumen-akkad.github.io/screenshots/home.png",
+        "https://moumen-akkad.github.io/screenshots/poem.png",
+        "https://moumen-akkad.github.io/screenshots/review.png"
+      ],
+      "versions": [
+        {
+          "version": "0.1.0",
+          "buildVersion": "1",
+          "date": "2026-10-26",
+          "localizedDescription": "أول إصدار من راوية: القراءة، والمراجعة المتباعدة، وكشف البحر والقافية، والنسخ الاحتياطي.",
+          "downloadURL": "https://github.com/moumen-akkad/moumen-akkad.github.io/releases/download/v0.1.0/Rawiya.ipa",
+          "size": 8304505,
+          "minOSVersion": "15.0"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "version": "0.1.0",
+      "versionDate": "2026-10-26",
+      "versionDescription": "أول إصدار من راوية: القراءة، والمراجعة المتباعدة، وكشف البحر والقافية، والنسخ الاحتياطي.",
+      "downloadURL": "https://github.com/moumen-akkad/moumen-akkad.github.io/releases/download/v0.1.0/Rawiya.ipa",
+      "size": 8304505
+    }
+  ],
+  "news": []
+}
