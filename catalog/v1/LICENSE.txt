@@ -3,4 +3,4 @@
 
 Rawiya catalog: poems from Arabic Wikisource, licensed CC BY-SA 4.0
 (https://creativecommons.org/licenses/by-sa/4.0/). Each poem records its source page and revision.
-Changes: wiki markup removed, verses split into hemistichs, duplicate pages merged.
+Changes: wiki markup removed, verses split into hemistichs, a poem found on several pages published once.
