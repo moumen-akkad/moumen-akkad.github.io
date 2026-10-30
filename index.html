@@ -22,7 +22,7 @@
   :root {
     --ground: #F3ECDD; --surface: #FBF7EE; --raised: #EFE6D3; --hairline: #E2D7C0;
     --ink: #1F1A14; --ink2: #5E5447; --ink3: #6E6455;
-    --gold: #B08A3A; --gold-text: #7A5A14; --gold-muted: #C9AE72; --on-gold: #FBF7EE;
+    --gold: #B08A3A; --gold-text: #7A5A14; --gold-muted: #C9AE72; --on-gold: #1A1406;
     --accent: #F7EBCD; --accent-line: #E2CC94; --rubric: #9C3B2A;
   }
   @media (prefers-color-scheme: dark) {
@@ -66,13 +66,15 @@
   .section-lead { text-align: center; color: var(--ink2); margin: 6px auto 0; max-width: 620px; }
 
   /* Screenshots */
-  /* Centred when they fit; scrollable from the first one when they don't. */
-  .shots { display: flex; gap: 18px; margin-top: 28px; overflow-x: auto; padding: 4px 4px 12px;
+  /* Centred when they fit; scrollable from the first one when they don't. The strip reaches the
+     screen's edges on a phone and leaves room for the shadows, which it would otherwise cut off. */
+  .shots { display: flex; gap: 18px; margin: 18px -20px -28px; overflow-x: auto; padding: 14px 20px 40px;
            scroll-snap-type: x mandatory; }
   .shots > :first-child { margin-inline-start: auto; }
   .shots > :last-child { margin-inline-end: auto; }
   .shots img { width: 230px; flex: none; border-radius: 30px; border: 1px solid var(--hairline);
-               box-shadow: 0 14px 34px rgba(15, 18, 22, .25); scroll-snap-align: center; }
+               box-shadow: 0 10px 24px rgba(15, 18, 22, .22); scroll-snap-align: center; }
+  @media (min-width: 1080px) { .shots img { width: 184px; } }
 
   /* Features */
   .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 28px; }
@@ -121,9 +123,11 @@
 
 <main class="wrap">
   <div class="shots" aria-label="صور من التطبيق">
-    <img src="screenshots/home.png" alt="شاشة اليوم: بيت اليوم ومراجعة اليوم" loading="lazy">
+    <img src="screenshots/home.png" alt="شاشة اليوم بمظهر الليل: بيت اليوم ومراجعة اليوم" loading="lazy">
     <img src="screenshots/poem.png" alt="شاشة القصيدة بمظهر الورق، مع البحر والقافية" loading="lazy">
-    <img src="screenshots/review.png" alt="المراجعة: يظهر الصدر ويُخفى العجز" loading="lazy">
+    <img src="screenshots/word.png" alt="معاني الكلمات: جذر الكلمة وما في «مختار الصحاح» عنها" loading="lazy">
+    <img src="screenshots/memorize.png" alt="الحفظ: يُخفى البيت كلمةً كلمة حتى تقوله من ذاكرتك" loading="lazy">
+    <img src="screenshots/catalog.png" alt="مكتبة راوية: آلاف القصائد بعصورها وشعرائها" loading="lazy">
   </div>
 
   <div class="divider" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="15,1 29,15 15,29 1,15"/><rect x="5.1" y="5.1" width="19.8" height="19.8"/></svg></div>
@@ -143,7 +147,7 @@
 
   <div class="divider" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="15,1 29,15 15,29 1,15"/><rect x="5.1" y="5.1" width="19.8" height="19.8"/></svg></div>
   <h2 id="download">نزّل راوية</h2>
-  <p class="section-lead">مجاناً، على أي جهاز. الإصدار ٠.٣.٠، ٣٠ أكتوبر ٢٠٢٦.</p>
+  <p class="section-lead">مجاناً، على أي جهاز. الإصدار ٠.٣.١، ٣٠ أكتوبر ٢٠٢٦.</p>
   <div class="downloads">
     <div class="card download">
       <h3>أندرويد</h3>
@@ -160,7 +164,7 @@
       </div>
       <p class="note">عبر <a href="https://altstore.io">AltStore</a> أو <a href="https://sidestore.io">SideStore</a>، وتأتيك التحديثات منهما. بحساب Apple مجاني يجدّد AltStore التطبيق كل أسبوع.</p>
       <div class="source"><code id="source-url">https://moumen-akkad.github.io/altstore.json</code><button type="button" id="copy-source">نسخ</button></div>
-      <p class="meta">أو <a href="https://github.com/moumen-akkad/moumen-akkad.github.io/releases/download/v0.3.0/Rawiya.ipa">نزّل ملف IPA</a> (١٠ م.ب) وثبّته بنفسك.</p>
+      <p class="meta">أو <a href="https://github.com/moumen-akkad/moumen-akkad.github.io/releases/download/v0.3.1/Rawiya.ipa">نزّل ملف IPA</a> (١٠ م.ب) وثبّته بنفسك.</p>
     </div>
     <div class="card download">
       <h3>في المتصفح</h3>

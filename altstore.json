@@ -19,13 +19,24 @@
       "localizedDescription": "اقرأ الشعر العربي الفصيح، واحفظه بيتاً بيتاً.\n\n• مراجعة متباعدة تعيد إليك كل بيت حفظته حين يوشك أن يُنسى.\n• احفظ بالترتيب: كل بيت يُخفى كلمةً كلمة ثم يُسمَّع موصولاً بما قبله.\n• استمع إلى الإلقاء بيتاً بيتاً، وسمّع بصوتك ليبيّن لك ما أخطأت فيه.\n• مكتبة راوية: آلاف القصائد من ويكي مصدر، تبحث فيها وتضيف ما تشاء.\n• المس كلمة لترى جذرها ومعناها من «مختار الصحاح»، واحفظها في «مفرداتي».\n• أضف أي قصيدة بلصقها من أي مكان، فتُقسَّم أبياتاً وأشطراً.\n• يتعرّف على بحر القصيدة ورويّها، ويقطّع البيت تفعيلةً تفعيلة.\n• التشكيل ظاهراً أو مخفياً، بمظهر الليل أو الورق.\n• بلا حساب ولا إعلانات ولا تتبّع، ونسخة احتياطية تنقل مكتبتك.",
       "iconURL": "https://moumen-akkad.github.io/icon-512.png",
       "tintColor": "#D4AF5A",
-      "category": "education",
+      "category": "lifestyle",
       "screenshots": [
         "https://moumen-akkad.github.io/screenshots/home.png",
         "https://moumen-akkad.github.io/screenshots/poem.png",
-        "https://moumen-akkad.github.io/screenshots/review.png"
+        "https://moumen-akkad.github.io/screenshots/word.png",
+        "https://moumen-akkad.github.io/screenshots/memorize.png",
+        "https://moumen-akkad.github.io/screenshots/catalog.png"
       ],
       "versions": [
+        {
+          "version": "0.3.1",
+          "buildVersion": "4",
+          "date": "2026-10-30",
+          "localizedDescription": "ما الجديد:\n• تختفي رسالتا «أُضيفت إلى مكتبتك» و«حُذفت من مفرداتي» بعد لحظات، بدل أن تبقيا على الشاشة.\n• كتابة أوضح: داكنة على الأزرار الذهبية في مظهر الورق، وروابط بذهبي أغمق، وأحمر أوضح في مظهر الليل.\n• القصيدة المضافة من مكتبة راوية يعلوها اسم المكتبة، وعبارات أدق في نافذة إكمال القصيدة وفي النسخ الاحتياطي.\n• الكلمة المحفوظة من البيت نفسه على جهازين تبقى واحدة في «مفرداتي» بعد الاستعادة، ومعها ما أضافه كل جهاز.\n• على الويب: تعرض الأبيات المختارة من المعلقات والمتنبي نصَّها الكامل من مكتبة راوية بعد إعادة فتح الصفحة أيضاً.",
+          "downloadURL": "https://github.com/moumen-akkad/moumen-akkad.github.io/releases/download/v0.3.1/Rawiya.ipa",
+          "size": 9512874,
+          "minOSVersion": "15.0"
+        },
         {
           "version": "0.3.0",
           "buildVersion": "3",
@@ -61,11 +72,18 @@
           "NSMicrophoneUsageDescription": "تسمعك راوية وأنت تسمّع الأبيات لتصحّح حفظك."
         }
       },
-      "version": "0.3.0",
+      "version": "0.3.1",
       "versionDate": "2026-10-30",
-      "versionDescription": "ما الجديد:\n• مكتبة راوية: آلاف القصائد من ويكي مصدر لشعراء مضى على وفاتهم مئة عام. ابحث بعنوان أو مطلع أو شاعر، ثم أضف القصيدة إلى مكتبتك، أو أكمل بها أبياتاً مختارة عندك ويبقى ما حفظته.\n• معاني الكلمات: المس كلمة في بيت لترى جذرها وما في «مختار الصحاح» عنها، واحفظها في «مفرداتي».\n• الاستماع أثبت حين تغيّر إعداداته وهو يعمل، وعلى الويب.\n• النسخة الاحتياطية تحمل التوقيتات والشروح والمفردات، واستعادتها تجمع ما حفظته على أجهزتك كلها.",
-      "downloadURL": "https://github.com/moumen-akkad/moumen-akkad.github.io/releases/download/v0.3.0/Rawiya.ipa",
-      "size": 9512829
+      "versionDescription": "ما الجديد:\n• تختفي رسالتا «أُضيفت إلى مكتبتك» و«حُذفت من مفرداتي» بعد لحظات، بدل أن تبقيا على الشاشة.\n• كتابة أوضح: داكنة على الأزرار الذهبية في مظهر الورق، وروابط بذهبي أغمق، وأحمر أوضح في مظهر الليل.\n• القصيدة المضافة من مكتبة راوية يعلوها اسم المكتبة، وعبارات أدق في نافذة إكمال القصيدة وفي النسخ الاحتياطي.\n• الكلمة المحفوظة من البيت نفسه على جهازين تبقى واحدة في «مفرداتي» بعد الاستعادة، ومعها ما أضافه كل جهاز.\n• على الويب: تعرض الأبيات المختارة من المعلقات والمتنبي نصَّها الكامل من مكتبة راوية بعد إعادة فتح الصفحة أيضاً.",
+      "downloadURL": "https://github.com/moumen-akkad/moumen-akkad.github.io/releases/download/v0.3.1/Rawiya.ipa",
+      "size": 9512874,
+      "screenshotURLs": [
+        "https://moumen-akkad.github.io/screenshots/home.png",
+        "https://moumen-akkad.github.io/screenshots/poem.png",
+        "https://moumen-akkad.github.io/screenshots/word.png",
+        "https://moumen-akkad.github.io/screenshots/memorize.png",
+        "https://moumen-akkad.github.io/screenshots/catalog.png"
+      ]
     }
   ],
   "news": []
