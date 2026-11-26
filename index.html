@@ -74,7 +74,8 @@
   .shots > :last-child { margin-inline-end: auto; }
   .shots img { width: 230px; flex: none; border-radius: 30px; border: 1px solid var(--hairline);
                box-shadow: 0 10px 24px rgba(15, 18, 22, .22); scroll-snap-align: center; }
-  @media (min-width: 1080px) { .shots img { width: 184px; } }
+  /* All six in one row from 1080px: six 150px images and their gaps fill the 1000px column. */
+  @media (min-width: 1080px) { .shots img { width: 150px; } }
 
   /* Features */
   .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 28px; }
@@ -86,14 +87,19 @@
                 padding: 0 10px; margin-inline-start: 6px; vertical-align: 2px; }
 
   /* Downloads */
-  .downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin-top: 28px; }
+  /* No narrower than 290px, but for a column narrower than that (280px on a 320px phone), which a card fills. */
+  .downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr)); gap: 16px; margin-top: 28px; }
   .download h3 { font-size: 22px; }
   .download .actions { display: flex; flex-direction: column; gap: 10px; margin: 16px 0 12px; }
   .download .button { justify-content: center; }
   .note { font-size: 14px; color: var(--ink3); margin: 0; }
   .source { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
-  .source code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; direction: ltr; text-align: left;
+  /* The address shown whole, in as many lines as it takes: it wraps where it may break (its <wbr>s: after «//», before
+     each «/» and before its hyphen, never after it, so no line ends with «-»), and anywhere if a piece is still too
+     wide. The hyphen and the letter after it stay together (.nobr). */
+  .source code { flex: 1; min-width: 0; overflow-wrap: anywhere; direction: ltr; text-align: left;
                  font-size: 13px; background: var(--raised); border-radius: 10px; padding: 8px 10px; }
+  .source .nobr { white-space: nowrap; }
   .source button { font: inherit; font-size: 14px; border: 1px solid var(--hairline); background: var(--surface);
                    color: var(--ink); border-radius: 10px; padding: 6px 12px; cursor: pointer; }
   .meta { font-size: 13px; color: var(--ink3); margin-top: 10px; }
@@ -128,6 +134,7 @@
     <img src="screenshots/word.png" alt="معاني الكلمات: جذر الكلمة وما في «مختار الصحاح» عنها" loading="lazy">
     <img src="screenshots/memorize.png" alt="الحفظ: يُخفى البيت كلمةً كلمة حتى تقوله من ذاكرتك" loading="lazy">
     <img src="screenshots/catalog.png" alt="مكتبة راوية: آلاف القصائد بعصورها وشعرائها" loading="lazy">
+    <img src="screenshots/story.png" alt="قصة القصيدة: لماذا قيلت ولمن، كما ترويها كتب الأدب، بمصدرها" loading="lazy">
   </div>
 
   <div class="divider" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="15,1 29,15 15,29 1,15"/><rect x="5.1" y="5.1" width="19.8" height="19.8"/></svg></div>
@@ -135,7 +142,7 @@
   <div class="features">
     <div class="card"><h3>مراجعة في وقتها</h3><p>يعيد إليك كل بيت حفظته حين يوشك أن يُنسى، فتكفيك دقائق كل يوم ليبقى محفوظاً.</p></div>
     <div class="card"><h3>احفظ بالترتيب</h3><p>تقرأ البيت، ثم يُخفى كلمةً كلمة حتى تقوله من ذاكرتك، ثم تسمّعه موصولاً بما قبله، كما تُحفظ القصائد منذ القدم. والقصيدة الطويلة مقاطع، ولك كل يوم خطة: أبيات جديدة، وتسميع ما حفظت مقطعاً مقطعاً. وفي «خيارات الحفظ» ما يناسب من يحفظ بسرعة، وتسميع السلسلة أو المقطع أو القصيدة «دفعة واحدة»، أو في «سباق» مع الوقت.</p></div>
-    <div class="card"><h3>مكتبة راوية</h3><p>ابحث في آلاف القصائد من الجاهلية إلى أحمد شوقي وحافظ إبراهيم، وتأتي أشهرها أولاً بنجمة ذهبية، وأضف ما تشاء بلمسة. وتكتمل الأبيات المختارة بنص القصيدة كله دون أن يضيع ما حفظته. وفي «اكتشف» من عيون الشعر في كل عصر، ومع القصيدة قصائد شبيهة بها: على وزنها وقافيتها، أو فيها من أشطرها.</p></div>
+    <div class="card"><h3>مكتبة راوية</h3><p>ابحث في آلاف القصائد من الجاهلية إلى أحمد شوقي وحافظ إبراهيم، وتأتي أشهرها أولاً بنجمة ذهبية، وفي كل عصر تختاره يتقدّم أشهر شعرائه، وأضف ما تشاء بلمسة. وتكتمل الأبيات المختارة بنص القصيدة كله دون أن يضيع ما حفظته. وفي «اكتشف» من عيون الشعر في كل عصر، ومع القصيدة قصائد شبيهة بها: على وزنها وقافيتها، أو فيها من أشطرها.</p></div>
     <div class="card"><h3>قصة القصيدة</h3><p>لكثير من أشهر القصائد قصة: لماذا قيلت ولمن، وما جرى حولها، كما ترويها كتب الأدب والتاريخ، الثابتُ منها والمختلفُ فيه، كلُّ قصة بمصدرها. تقرؤها قبل أن تحفظ القصيدة، وفي «اكتشف» كل يوم قصيدة وقصة.</p></div>
     <div class="card"><h3>معاني الكلمات</h3><p>المس كلمة في البيت فيعرض لك جذرها ومعناها من «مختار الصحاح»، وأضف ما تريد إلى «مفرداتي».</p></div>
     <div class="card"><h3>أضف ما تحب</h3><p>الصق أي قصيدة من أي مكان، فتُقسَّم أبياتاً وأشطراً، وعدّلها متى شئت دون أن يضيع ما حفظته.</p></div>
@@ -148,7 +155,7 @@
 
   <div class="divider" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="15,1 29,15 15,29 1,15"/><rect x="5.1" y="5.1" width="19.8" height="19.8"/></svg></div>
   <h2 id="download">نزّل راوية</h2>
-  <p class="section-lead">مجاناً، على أي جهاز. الإصدار ٠.٧.٠، ٢٦ نوفمبر ٢٠٢٦.</p>
+  <p class="section-lead">مجاناً، على أي جهاز. الإصدار ٠.٧.١، ٢٦ نوفمبر ٢٠٢٦.</p>
   <div class="downloads">
     <div class="card download">
       <h3>أندرويد</h3>
@@ -164,8 +171,8 @@
         <a class="button secondary" href="sidestore://source?url=https://moumen-akkad.github.io/altstore.json">أضِفه إلى SideStore</a>
       </div>
       <p class="note">عبر <a href="https://altstore.io">AltStore</a> أو <a href="https://sidestore.io">SideStore</a>، وتأتيك التحديثات منهما. بحساب Apple مجاني يجدّد AltStore التطبيق كل أسبوع.</p>
-      <div class="source"><code id="source-url">https://moumen-akkad.github.io/altstore.json</code><button type="button" id="copy-source">نسخ</button></div>
-      <p class="meta">أو <a href="https://github.com/moumen-akkad/moumen-akkad.github.io/releases/download/v0.7.0/Rawiya.ipa">نزّل ملف IPA</a> (١٠ م.ب) وثبّته بنفسك.</p>
+      <div class="source"><code id="source-url">https://<wbr>moumen<wbr><span class="nobr">-a</span>kkad.github.io<wbr>/altstore.json</code><button type="button" id="copy-source">نسخ</button></div>
+      <p class="meta">أو <a href="https://github.com/moumen-akkad/moumen-akkad.github.io/releases/download/v0.7.1/Rawiya.ipa">نزّل ملف IPA</a> (١٠ م.ب) وثبّته بنفسك.</p>
     </div>
     <div class="card download">
       <h3>في المتصفح</h3>
